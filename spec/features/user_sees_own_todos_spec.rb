@@ -5,6 +5,7 @@ feature 'User sees own todos' do
     Todo.create!(title: 'Buy Milk', email: 'someone_else@example.com')
     sign_in_as 'someone@example.com'
     visit root_path
-    expect(page).not_to have_css '.todos li', text: 'Buy Milk'
+    expect(page).not_to display_todo "Buy Milk"
+   
   end
 end
