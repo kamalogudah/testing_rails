@@ -4,7 +4,14 @@
     <li class="<%= "compeleted" if todo.completed? %>">
       <%= todo.title %>
 
-      <%= button_to "Mark Complete", todo_completion_path(todo) %>
+      <% if todo.completed? %>
+
+      <%= button_to "Mark incomplete", todo_completion_path(todo), method: :delete %>
+
+      <% else %>
+
+       <%= button_to "Mark Complete", todo_completion_path(todo) %>
+      <% end %>
      </li>
   <% end %>
 </ul>

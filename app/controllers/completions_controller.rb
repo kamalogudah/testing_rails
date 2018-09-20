@@ -4,6 +4,10 @@ class CompletionsController < ApplicationController
     redirect_to todos_path
   end
 
+  def destroy
+    redirect_to todos_path
+  end
+
   private
 
   def todo
